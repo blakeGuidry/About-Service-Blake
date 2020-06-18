@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   getAbout(id) {
-    Axios.get(`http://about-service-env.eba-sfsa5uyc.us-east-2.elasticbeanstalk.com/${id}`)
+    Axios.get(`http://targaryen-about.eba-sfsa5uyc.us-east-2.elasticbeanstalk.com/${id}`)
       .then(about => {
         this.setState({
           id: about.data[0].id,
@@ -76,7 +76,7 @@ class App extends Component {
       }
     }
 
-    Axios.put('http://about-service-env.eba-sfsa5uyc.us-east-2.elasticbeanstalk.com/question', body)
+    Axios.put('http://targaryen-about.eba-sfsa5uyc.us-east-2.elasticbeanstalk.com/question', body)
       .then(() => {
         const qas = this.state.qa;
         qas.push(q);
@@ -102,7 +102,7 @@ class App extends Component {
       }
     }
 
-    Axios.put('http://about-service-env.eba-sfsa5uyc.us-east-2.elasticbeanstalk.com/answer', body)
+    Axios.put('http://targaryen-about.eba-sfsa5uyc.us-east-2.elasticbeanstalk.com/answer', body)
       .then(() => {
         let qas = this.state.qa;
         qas = qas.map(qs => {
